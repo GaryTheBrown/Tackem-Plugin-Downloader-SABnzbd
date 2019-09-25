@@ -9,7 +9,7 @@ from libs.config_object import ConfigObject
 from libs.startup_arguments import PLUGINFOLDERLOCATION
 from . import www
 
-SETTINGS = load_plugin_settings(PLUGINFOLDERLOCATION + "downloader/sabnzbd/setting.json")
+SETTINGS = load_plugin_settings(PLUGINFOLDERLOCATION + "downloader/sabnzbd/settings.json")
 
 CONFIG = ConfigList("sabnzbd", plugin=sys.modules[__name__], objects=[
     ConfigObject("enabled", "Enabled", "boolean", default=False, input_type="switch",
