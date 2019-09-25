@@ -3,18 +3,13 @@ from glob import glob
 import sys
 from configobj import ConfigObj
 from validate import Validator
-from libs.plugin_base import PluginBaseClass
+from libs.plugin_base import PluginBaseClass, load_plugin_settings
 from libs.config_list import ConfigList
 from libs.config_object import ConfigObject
+from libs.startup_arguments import PLUGINFOLDERLOCATION
 from . import www
 
-SETTINGS = {
-    'single_instance':True,
-    'webui':True,
-    'api':True,
-    'type':'downloader',
-    'platform': ['Linux', 'Darwin', 'Windows']
-}
+SETTINGS = load_plugin_settings(PLUGINFOLDERLOCATION + "downloader/sabnzbd/setting.json")
 
 CONFIG = ConfigList("sabnzbd", plugin=sys.modules[__name__], objects=[
     ConfigObject("enabled", "Enabled", "boolean", default=False, input_type="switch",
