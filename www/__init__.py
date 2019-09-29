@@ -8,7 +8,7 @@ def mounts(key, instance_name=None):
     '''where the system creates the cherrypy mounts'''
     tackem_system = TackemSystemPlugin("downloader", "sabnzbd", instance_name)
     cherrypy.tree.mount(Root("SABnzbd Downloader", key, tackem_system),
-                        tackem_system.get_baseurl() + key.replace(" ", "/") + "/",
+                        tackem_system.baseurl + key.replace(" ", "/") + "/",
                         cfg(tackem_system.config()))
 
 def cfg(config):
