@@ -20,6 +20,6 @@ class Root(HTMLTEMPLATE):
     @cherrypy.expose
     def index(self):
         '''index of plugin'''
-        self._tackem_system.get_auth().check_auth()
+        self._tackem_system.auth.check_auth()
         index_page = self._name.replace("_", " ").title() + " ROOT"
         return self._template(index_page)
