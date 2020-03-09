@@ -1,12 +1,8 @@
 '''sabnzbd controller init'''
-from glob import glob
-import sys
-from configobj import ConfigObj
-from validate import Validator
 from libs.plugin_base import PluginBaseClass, load_plugin_settings
 from libs.config.list import ConfigList
-from libs.config.obj.boolean import ConfigObjBoolean
 from libs.config.obj.string import ConfigObjString
+from libs.config.obj.boolean import ConfigObjBoolean
 from libs.config.obj.integer_number import ConfigObjIntegerNumber
 from libs.config.obj.data.input_attributes import InputAttributes
 from libs.startup_arguments import PLUGINFOLDERLOCATION
@@ -29,8 +25,7 @@ CONFIG = ConfigList(
         "Download Location",
         "Where is the completed download location?"
     ),
-
-    ConfigObjSting(
+    ConfigObjString(
         "host",
         "localhost",
         "Host Location",
@@ -40,7 +35,7 @@ CONFIG = ConfigList(
         "port",
         8080,
         "Host Port",
-        "The Port where the host is located"),
+        "The Port where the host is located",
         input_attributes=InputAttributes(
             min=1001,
             max=65535
