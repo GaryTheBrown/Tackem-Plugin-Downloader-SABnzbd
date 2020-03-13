@@ -8,7 +8,8 @@ from libs.config.obj.data.input_attributes import InputAttributes
 from libs.startup_arguments import PLUGINFOLDERLOCATION
 from . import www
 
-SETTINGS = load_plugin_settings(PLUGINFOLDERLOCATION + "downloader/sabnzbd/settings.json")
+SETTINGS = load_plugin_settings(
+    PLUGINFOLDERLOCATION + "downloader/sabnzbd/settings.json")
 
 CONFIG = ConfigList(
     "sabnzbd",

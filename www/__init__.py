@@ -6,6 +6,8 @@ from system.plugin import TackemSystemPlugin
 from config_data import CONFIG
 
 LAYOUT = {}
+
+
 def mounts(key, instance_name=None):
     '''where the system creates the cherrypy mounts'''
     tackem_system = TackemSystemPlugin("downloader", "sabnzbd", instance_name)
@@ -15,9 +17,11 @@ def mounts(key, instance_name=None):
         cfg()
     )
 
+
 def cfg():
     '''generate the cherrypy conf'''
     return {}
+
 
 class Root(HTMLTEMPLATE):
     '''ROOT OF PLUGINS WEBUI HERE'''
