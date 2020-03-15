@@ -2,6 +2,7 @@
 from libs.plugin_base import PluginBaseClass, load_plugin_settings
 from libs.config.list import ConfigList
 from libs.config.obj.string import ConfigObjString
+from libs.config.obj.enabled import ConfigObjEnabled
 from libs.config.obj.boolean import ConfigObjBoolean
 from libs.config.obj.integer_number import ConfigObjIntegerNumber
 from libs.config.obj.data.input_attributes import InputAttributes
@@ -14,12 +15,7 @@ SETTINGS = load_plugin_settings(
 CONFIG = ConfigList(
     "sabnzbd",
     "SABnzbd",
-    ConfigObjBoolean(
-        "enabled",
-        False,
-        "Enabled",
-        ""
-    ),
+    ConfigObjEnabled(),
     ConfigObjString(
         "downloadlocation",
         "downloads/",
